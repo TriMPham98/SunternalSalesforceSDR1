@@ -76,6 +76,7 @@ def main():
                 print('< Waiting for input: DNQ Type >\n')
                 clickSalesforceLogo()
                 topBarChangePRtoDNQ()
+                clickDispositionMenu()
 
                 if dnqInput == "Has Solar":
                     dnqHasSolar()
