@@ -84,16 +84,19 @@ def main():
                     pyautogui.leftClick()
 
                 elif dnqInput == "Not Homeowner":
+                    dnqNotHomeowner()
                     print("Setting -DNQ - Not Homeowner- for Call Disposition\n")
                     pyautogui.moveTo(1760, 861)
                     pyautogui.leftClick()
 
                 elif dnqInput == "Low Bill":
+                    dnqLowBill()
                     print("Setting -DNQ - Low Bill- for Call Disposition\n")
                     pyautogui.moveTo(1760, 824)
                     pyautogui.leftClick()
 
                 elif dnqInput == "Out of Area":
+                    dnqOutOfArea()
                     print("Setting -DNQ - Out of Area- for Call Disposition\n")
                     pyautogui.moveTo(1760, 904)
                     pyautogui.leftClick()
@@ -368,6 +371,33 @@ def dnqHasSolar():
     pyautogui.leftClick()
     time.sleep(1)
 
+def dnqNotHomeowner():
+    pyautogui.moveTo(769, 448) # Move to Status Detail
+    pyautogui.leftClick()
+    pyautogui.moveTo(665, 602) # Choose -Not Homeowner- as Status Detail
+    pyautogui.leftClick()
+    pyautogui.moveTo(1296, 889) # Move to Done Button
+    pyautogui.leftClick()
+    time.sleep(1)
+
+def dnqLowBill():
+    pyautogui.moveTo(769, 448) # Move to Status Detail
+    pyautogui.leftClick()
+    pyautogui.moveTo(673, 562) # Choose -Low Bill- as Status Detail
+    pyautogui.leftClick()
+    pyautogui.moveTo(1296, 889) # Move to Done Button
+    pyautogui.leftClick()
+    time.sleep(1)
+
+def dnqOutOfArea():
+    pyautogui.moveTo(769, 448) # Move to Status Detail
+    pyautogui.leftClick()
+    pyautogui.moveTo(696, 843) # Choose -Out of Area- as Status Detail
+    pyautogui.leftClick()
+    pyautogui.moveTo(1296, 889) # Move to Done Button
+    pyautogui.leftClick()
+    time.sleep(1)
+
 '''
 Call Complete Combination
 '''
@@ -394,12 +424,6 @@ if __name__ == "__main__":
     main()
 
 '''
-- Finish DNQ Functionality
-    - Has Solar
-    - Not Homeowner
-    - Low Bill
-    - Out of Area
-
 - Use pyautogui.locateCenterOnScreen() for each button to make code compatible with more devices
     - Mac
         - Monitors
