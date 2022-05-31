@@ -19,6 +19,7 @@ def main():
     while cadenceContinue:
 
         print("------------------------------------------------------------\n")
+        print("Homeowners called: " + str(outBoundCalls) + "\n")
         print("< Waiting for input: Start Calling >\n")
         callCadence = pyautogui.confirm(title="Start Calling?", buttons=['Yes', 'No'])
 
@@ -46,7 +47,7 @@ def main():
                     break
             
             print('< Waiting for input: Disposition Type >\n')
-            userInput =  pyautogui.confirm(title= 'Disposition Type', buttons=['No Answer', 'Call Back', 'Not Interested', 'Hung Up', 'DNQ', 'Disconnected Number', 'Wrong Number', 'DNC', 'New Appointment'])
+            userInput =  pyautogui.confirm(title='Disposition Type', buttons=['No Answer', 'Call Back', 'Not Interested', 'Hung Up', 'DNQ', 'Disconnected Number', 'Wrong Number', 'DNC', 'New Appointment'])
             clickSalesforceLogo()
             setTelemarketingCallPurpose()
 
@@ -418,8 +419,7 @@ def markComplete():
     pyautogui.scroll(-500)
     pyautogui.moveTo(785, 780) # Move to drop down Custom Step
     pyautogui.leftClick()
-    pyautogui.moveTo(733, 827) # Move to Mark Complete
-    pyautogui.leftClick()
+    pyautogui.leftClick(pyautogui.locateCenterOnScreen('markComplete.png', confidence=0.9))
 
 if __name__ == "__main__":
     main()
