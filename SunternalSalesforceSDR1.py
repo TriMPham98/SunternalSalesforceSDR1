@@ -35,16 +35,12 @@ def main():
             while callContinue:
 
                 print('< Waiting for input: Call End >\n')
-                callEnd = pyautogui.confirm(title="End Call?", buttons=['Yes', 'Call Ended Early'])
+                callEnd = pyautogui.confirm(title="End Call?", buttons=['Yes'])
                 clickSalesforceLogo()
 
                 if callEnd == "Yes":
                     callContinue = False
                     endCall()
-
-                elif callEnd == "Call Ended Early":
-                    print('Call Ended Early - Continuing to Disposition Box\n')
-                    break
             
             print('< Waiting for input: Disposition Type >\n')
             userInput =  pyautogui.confirm(title='Disposition Type', buttons=['No Answer', 'Call Back', 'Not Interested', 'Hung Up', 'DNQ', 'Disconnected Number', 'Wrong Number', 'DNC', 'New Appointment'])
