@@ -14,6 +14,8 @@ def main():
     outBoundCalls = noAnswers = callBack = notInterested = dnq = disconnectedNumber = wrongNumber = hungUp = dnc = newAppointment = 0
 
     print('\nCommence Operation "Look Ma, No Hands"\n')
+    openSalesforce()
+    clickSalesforceLogo()
 
     cadenceContinue = True
     while cadenceContinue:
@@ -156,13 +158,31 @@ def main():
         + str(dnc) + ' DNC\'s\n'
         + str(newAppointment) + ' New Appointments\n')
 
+'''
+Open Salesforce
+'''
+def openSalesforce():
+    pyautogui.moveTo(1000, 600)
+    pyautogui.click()
+    pyautogui.hotkey('command', 'space')
+    pyautogui.write('Google Chrome')
+    pyautogui.press('enter')
+    pyautogui.hotkey('command', 'l')
+    pyautogui.write('https://baysunsolar123456.lightning.force.com/lightning/page/home')
+    pyautogui.press('enter')
+    time.sleep(4)
+    pyautogui.leftClick(pyautogui.locateCenterOnScreen('SalesforceLogin.png'))
+    time.sleep(4)
+    pyautogui.leftClick(pyautogui.locateCenterOnScreen('openWorkQueue.png'))
+    time.sleep(4)
+
 
 '''
 Call Commence Combination
 '''
 
 def clickSalesforceLogo():
-    pyautogui.leftClick(pyautogui.locateCenterOnScreen('salesforceLogo.png', confidence=0.9))
+    pyautogui.leftClick(pyautogui.locateCenterOnScreen('SalesforceLogo.png', confidence=0.9))
 
 def closeMostRecentHomeownerTab():
     print("Closing Most Recent Homeowner Tab\n")
@@ -206,7 +226,8 @@ def setTelemarketingCallPurpose():
     # pyautogui.leftClick(pyautogui.locateCenterOnScreen('telemarketing.png', confidence=0.9))
 
     # Rapid
-    pyautogui.moveTo(1545, 879)  # Move to Call Purpose Menu (Backup Telemarketing Click)
+    time.sleep(1) # Compensate for Salesforce Lag
+    pyautogui.moveTo(1545, 879)
     pyautogui.leftClick()
     pyautogui.moveTo(1545, 684, duration=0)  # Move to Telemarketing Button
     pyautogui.leftClick()
@@ -222,6 +243,7 @@ def clickDispositionMenu():
     # Rapid
     pyautogui.moveTo(1777, 876, duration=0)
     pyautogui.leftClick()
+    time.sleep(2) # Compensate for Salesforce Lag
 
 def setNoAnswerDisposition():
     print("Setting -No Answer- for Call Disposition\n")
