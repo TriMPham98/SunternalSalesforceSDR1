@@ -327,7 +327,7 @@ def topBarChangePRtoDNQ():
     pyautogui.leftClick()
     pyautogui.moveTo(1381, 323)  # Mark as Current Status
     pyautogui.leftClick()
-    time.sleep(1)
+    time.sleep(2)
 
 '''
 DNQ Status Detail
