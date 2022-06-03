@@ -173,7 +173,7 @@ def openSalesforce():
     time.sleep(4)
     pyautogui.leftClick(pyautogui.locateCenterOnScreen('SalesforceLogin.png'))
     time.sleep(4)
-    pyautogui.leftClick(pyautogui.locateCenterOnScreen('openWorkQueue.png'))
+    pyautogui.leftClick(pyautogui.locateCenterOnScreen('openWorkQueue.png', confidence=0.9))
     time.sleep(4)
 
 
@@ -441,7 +441,6 @@ def markComplete():
 
 if __name__ == "__main__":
     main()
-
 '''
 - Use pyautogui.locateCenterOnScreen() for each button to make code compatible with more devices
     - Mac
