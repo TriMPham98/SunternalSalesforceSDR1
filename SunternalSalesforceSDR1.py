@@ -143,20 +143,7 @@ def main():
             currentMinute = (totalSeconds / 60) % 60
             currentHour = (totalSeconds / 60 / 60) % 24
 
-    print('You called ' + str(outBoundCalls) + ' homeowners in ' 
-        + str(math.trunc(currentHour)) + ' hours, ' 
-        + str(math.trunc(currentMinute)) + ' minutes, and ' 
-        + str(round(currentSecond, 1)) + ' seconds this session.\n')
-
-    print(str(noAnswers) + ' No Answers\n'
-        + str(callBack) + ' Call Backs\n'
-        + str(notInterested) + ' Not Interested\'s\n'
-        + str(hungUp) + ' Hung Ups\n'
-        + str(dnq) + ' DNQ\'s\n'
-        + str(disconnectedNumber) + ' Disconnected Numbers\n'
-        + str(wrongNumber) + ' Wrong Numbers\n'
-        + str(dnc) + ' DNC\'s\n'
-        + str(newAppointment) + ' New Appointments\n')
+    printCallSummary()
 
 '''
 Open Salesforce
@@ -439,6 +426,22 @@ def markComplete():
     pyautogui.moveTo(785, 780) # Move to drop down Custom Step
     pyautogui.leftClick()
     pyautogui.leftClick(pyautogui.locateCenterOnScreen('markComplete.png', confidence=0.9))
+
+def printCallSummary():
+    print('You called ' + str(outBoundCalls) + ' homeowners in ' 
+        + str(math.trunc(currentHour)) + ' hours, ' 
+        + str(math.trunc(currentMinute)) + ' minutes, and ' 
+        + str(round(currentSecond, 1)) + ' seconds this session.\n')
+
+    print(str(noAnswers) + ' No Answers\n'
+        + str(callBack) + ' Call Backs\n'
+        + str(notInterested) + ' Not Interested\'s\n'
+        + str(hungUp) + ' Hung Ups\n'
+        + str(dnq) + ' DNQ\'s\n'
+        + str(disconnectedNumber) + ' Disconnected Numbers\n'
+        + str(wrongNumber) + ' Wrong Numbers\n'
+        + str(dnc) + ' DNC\'s\n'
+        + str(newAppointment) + ' New Appointments\n')
 
 if __name__ == "__main__":
     main()
