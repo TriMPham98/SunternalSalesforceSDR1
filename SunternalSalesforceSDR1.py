@@ -175,7 +175,7 @@ def openSalesforce():
     time.sleep(2)
     pyautogui.press('enter')
     time.sleep(4)
-    for i in range(3):
+    for i in range(5):
         pyautogui.leftClick(pyautogui.locateCenterOnScreen('openWorkQueue.png', confidence=0.9))
     time.sleep(4)
 
