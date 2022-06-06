@@ -226,7 +226,7 @@ def setTelemarketingCallPurpose():
     # pyautogui.leftClick(pyautogui.locateCenterOnScreen('telemarketing.png', confidence=0.9))
 
     # Rapid
-    time.sleep(1) # Compensate for Salesforce Lag
+    # time.sleep(1) # Compensate for Salesforce Lag
     pyautogui.moveTo(1545, 879)
     pyautogui.leftClick()
     pyautogui.moveTo(1545, 684, duration=0)  # Move to Telemarketing Button
@@ -243,7 +243,7 @@ def clickDispositionMenu():
     # Rapid
     pyautogui.moveTo(1777, 876, duration=0)
     pyautogui.leftClick()
-    time.sleep(2) # Compensate for Salesforce Lag
+    # time.sleep(2) # Compensate for Salesforce Lag
 
 def setNoAnswerDisposition():
     print("Setting -No Answer- for Call Disposition\n")
@@ -389,7 +389,7 @@ def dnqHasSolar():
     pyautogui.leftClick()
     pyautogui.moveTo(1296, 889) # Move to Done Button
     pyautogui.leftClick()
-    time.sleep(1)
+    time.sleep(3)
 
 def dnqNotHomeowner():
     pyautogui.moveTo(769, 448) # Move to Status Detail
@@ -398,7 +398,7 @@ def dnqNotHomeowner():
     pyautogui.leftClick()
     pyautogui.moveTo(1296, 889) # Move to Done Button
     pyautogui.leftClick()
-    time.sleep(1)
+    time.sleep(3)
 
 def dnqLowBill():
     pyautogui.moveTo(769, 448) # Move to Status Detail
@@ -407,7 +407,7 @@ def dnqLowBill():
     pyautogui.leftClick()
     pyautogui.moveTo(1296, 889) # Move to Done Button
     pyautogui.leftClick()
-    time.sleep(1)
+    time.sleep(3)
 
 def dnqOutOfArea():
     pyautogui.moveTo(769, 448) # Move to Status Detail
@@ -416,7 +416,7 @@ def dnqOutOfArea():
     pyautogui.leftClick()
     pyautogui.moveTo(1296, 889) # Move to Done Button
     pyautogui.leftClick()
-    time.sleep(1)
+    time.sleep(3)
 
 '''
 Call Complete Combination
