@@ -175,7 +175,8 @@ def openSalesforce():
     time.sleep(2)
     pyautogui.press('enter')
     time.sleep(4)
-    pyautogui.leftClick(pyautogui.locateCenterOnScreen('openWorkQueue.png', confidence=0.9))
+    for i in range(3):
+        pyautogui.leftClick(pyautogui.locateCenterOnScreen('openWorkQueue.png', confidence=0.9))
     time.sleep(4)
 
 '''
@@ -202,9 +203,8 @@ def closeDropDownNotification():
 def viewDetails():
     time.sleep(1) 
     print("Viewing Details\n")
-    pyautogui.leftClick(pyautogui.locateCenterOnScreen('detailsDark.png', confidence=0.9))
-    pyautogui.leftClick(pyautogui.locateCenterOnScreen('detailsDark.png', confidence=0.9))
-    pyautogui.leftClick(pyautogui.locateCenterOnScreen('detailsDark.png', confidence=0.9))
+    for i in range(3):
+        pyautogui.leftClick(pyautogui.locateCenterOnScreen('detailsDark.png', confidence=0.9))
     pyautogui.moveRel(0, 350, duration=0.25)  # Move cursor from details to scroll 
     pyautogui.scroll(-500)  # Scroll to System Size, Price, and Notes
 
