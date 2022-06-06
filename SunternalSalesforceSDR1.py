@@ -168,6 +168,7 @@ def openSalesforce():
     pyautogui.write('Google Chrome')
     pyautogui.press('enter')
     pyautogui.hotkey('command', 'l')
+    time.sleep(1)
     pyautogui.write('https://baysunsolar123456.lightning.force.com/lightning/page/home')
     pyautogui.press('enter')
     time.sleep(4)
@@ -175,7 +176,6 @@ def openSalesforce():
     time.sleep(4)
     pyautogui.leftClick(pyautogui.locateCenterOnScreen('openWorkQueue.png', confidence=0.9))
     time.sleep(4)
-
 
 '''
 Call Commence Combination
