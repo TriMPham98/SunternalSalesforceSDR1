@@ -162,6 +162,7 @@ def main():
 Open Salesforce
 '''
 def openSalesforce():
+    print("Opening Salesforce on Google Chrome\n")
     pyautogui.moveTo(1000, 600)
     pyautogui.click()
     pyautogui.hotkey('command', 'space')
