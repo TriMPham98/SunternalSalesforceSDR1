@@ -14,7 +14,9 @@ def main():
     outBoundCalls = noAnswers = callBack = notInterested = dnq = disconnectedNumber = wrongNumber = hungUp = dnc = newAppointment = 0
 
     print('\nCommence Operation "Look Ma, No Hands"\n')
-    openSalesforce()
+    openSF = pyautogui.confirm(title="Open Salesforce?", buttons=['Yes', 'No'])
+    if openSF == "Yes":
+        openSalesforce()
     clickSalesforceLogo()
 
     cadenceContinue = True
@@ -178,6 +180,7 @@ def openSalesforce():
     for i in range(5):
         pyautogui.leftClick(pyautogui.locateCenterOnScreen('openWorkQueue.png', confidence=0.9))
     time.sleep(4)
+    closeDropDownNotification()
 
 '''
 Call Commence Combination
