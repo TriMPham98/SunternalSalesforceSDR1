@@ -11,7 +11,7 @@ def main():
     start = time.time()
 
     # Instantiate Call Disposition Counters
-    outBoundCalls = noAnswers = callBack = notInterested = dnq = disconnectedNumber = wrongNumber = hungUp = dnc = newAppointment = 0
+    outBoundCalls = noAnswers = manualDispos = callBack = notInterested = dnq = disconnectedNumber = wrongNumber = hungUp = dnc = newAppointment = 0
 
     print('\nCommence Operation "Look Ma, No Hands"\n')
     # openSF = pyautogui.confirm(title="Open Salesforce?", buttons=['Yes', 'No'])
@@ -62,18 +62,21 @@ def main():
                 setCallBackDisposition()
                 markComplete()
                 callBack += 1
+                manualDispos += 1
                 
             elif userInput == "Not Interested":
                 topBarChangePRtoNotInterested()
                 setNotInterestedDisposition()
                 markComplete()
                 notInterested += 1
+                manualDispos += 1
 
             elif userInput == "Hung Up":
                 topBarChangePRtoNotInterested()
                 setHungUpDisposition()
                 markComplete()
                 hungUp += 1
+                manualDispos += 1
 
             elif userInput == "DNQ":
                 dnqInput = pyautogui.confirm(buttons=['Has Solar', 'Not Homeowner', 'Low Bill', 'Out of Area'])
@@ -108,6 +111,7 @@ def main():
 
                 markComplete()
                 dnq += 1
+                manualDispos += 1
 
             elif userInput == "Disconnected Number":
                 topBarChangePRtoDNQ()
@@ -115,6 +119,7 @@ def main():
                 setDisconnectedNumberDisposition()
                 markComplete()
                 disconnectedNumber += 1
+                manualDispos += 1
 
             elif userInput == "Wrong Number":
                 topBarChangePRtoDNQ()
@@ -122,6 +127,7 @@ def main():
                 setWrongNumberDisposition()
                 markComplete()
                 wrongNumber += 1
+                manualDispos += 1
 
             elif userInput == 'DNC':
                 topBarChangePRtoDNQ()
@@ -129,6 +135,7 @@ def main():
                 setDNCDisposition()
                 markComplete()
                 dnc += 1
+                manualDispos += 1
 
             elif userInput == 'New Appointment':
                 setNewAppointmentDisposition()
@@ -154,13 +161,8 @@ def main():
         + str(round(currentSecond, 1)) + ' seconds this session.\n')
 
     print(str(noAnswers) + ' No Answers\n'
+        + str(manualDispos) + ' Manual Dispositions\n'
         + str(callBack) + ' Call Backs\n'
-        + str(notInterested) + ' Not Interested\'s\n'
-        + str(hungUp) + ' Hung Ups\n'
-        + str(dnq) + ' DNQ\'s\n'
-        + str(disconnectedNumber) + ' Disconnected Numbers\n'
-        + str(wrongNumber) + ' Wrong Numbers\n'
-        + str(dnc) + ' DNC\'s\n'
         + str(newAppointment) + ' New Appointments\n')
 
 '''
