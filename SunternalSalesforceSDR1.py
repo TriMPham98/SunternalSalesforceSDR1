@@ -312,7 +312,6 @@ def setNewAppointmentDisposition():
     pyautogui.moveTo(1790, 671, duration=0) # Move to New Appointment
     pyautogui.leftClick()
 
-
 '''
 New Call/Appointment
 '''
@@ -445,26 +444,4 @@ def markComplete():
 
 if __name__ == "__main__":
     main()
-'''
-- Use pyautogui.locateCenterOnScreen() for each button to make code compatible with more devices
-    - Mac
-        - Monitors
-        - Laptops
-    - Windows
 
-- Export to a .txt file to track my own stats
-
-- Expand functionality to Pitch Misses
-
-- Expand functionality to Confirmation Calls
-
-- Use Voice Recognition for No Answer Auto Disposition
-    - "Please leave your message for..."
-    - "Hello. Please leave a message after the tone..."
-    - "Hello. No one is available to take your call. Please leave a message after the tone."
-    - "Your call has been forwarded to an automated voice message system."
-    - "Your call has been forwarded to an automated voice messaging system."
-    - "At the tone, please record your message."
-    - "I'm sorry, but the person you called..."
-
-'''
