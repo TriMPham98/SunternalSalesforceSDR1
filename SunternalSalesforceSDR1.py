@@ -14,9 +14,9 @@ def main():
     outBoundCalls = noAnswers = callBack = notInterested = dnq = disconnectedNumber = wrongNumber = hungUp = dnc = newAppointment = 0
 
     print('\nCommence Operation "Look Ma, No Hands"\n')
-    openSF = pyautogui.confirm(title="Open Salesforce?", buttons=['Yes', 'No'])
-    if openSF == "Yes":
-        openSalesforce()
+    # openSF = pyautogui.confirm(title="Open Salesforce?", buttons=['Yes', 'No'])
+    # if openSF == "Yes":
+    #     openSalesforce()
     clickSalesforceLogo()
 
     cadenceContinue = True
@@ -47,13 +47,16 @@ def main():
                     endCall()
             
             print('< Waiting for input: Disposition Type >\n')
-            userInput =  pyautogui.confirm(title='Disposition Type', buttons=['No Answer', 'Call Back', 'Not Interested', 'Hung Up', 'DNQ', 'Disconnected Number', 'Wrong Number', 'DNC', 'New Appointment'])
+            userInput =  pyautogui.confirm(title='Disposition Type', buttons=['No Answer', 'Manual', 'Call Back', 'Not Interested', 'Hung Up', 'DNQ', 'Disconnected Number', 'Wrong Number', 'DNC', 'New Appointment'])
             clickSalesforceLogo()
             setTelemarketingCallPurpose()
 
             if userInput == "No Answer":
                 setNoAnswerDisposition()
                 noAnswers += 1
+
+            if userInput == "Manual":
+                pass
 
             elif userInput == "Call Back":
                 setCallBackDisposition()
@@ -185,7 +188,6 @@ def openSalesforce():
 '''
 Call Commence Combination
 '''
-
 def clickSalesforceLogo():
     pyautogui.leftClick(pyautogui.locateCenterOnScreen('SalesforceLogo.png', confidence=0.9))
 
@@ -221,7 +223,6 @@ def endCall():
 '''
 Call Purpose
 '''
-
 def setTelemarketingCallPurpose():
     print("Setting -Telemarketing- for Call Purpose\n")
 
@@ -239,7 +240,6 @@ def setTelemarketingCallPurpose():
 '''
 Call Disposition
 '''
-
 def clickDispositionMenu():
     # Robust
     # pyautogui.leftClick(pyautogui.locateCenterOnScreen('callDisposition.png', confidence=0.9))
@@ -313,21 +313,8 @@ def setNewAppointmentDisposition():
     pyautogui.leftClick()
 
 '''
-New Call/Appointment
-'''
-
-def setNewCallBack(): 
-    pyautogui.press('left') # Improve with more robust implementation
-    pyautogui.press('left')
-    pyautogui.leftClick(pyautogui.locateCenterOnScreen('newCallBack.png', confidence=0.9))
-
-def setNewAppointment():
-    void
-
-'''
 Top Bar Status Change
 '''
-
 def topBarChangePRtoNotInterested():
     print("Top Bar Change: Pending Reschedule to Not Interested\n")
     pyautogui.moveTo(1200, 775, duration=0)  # Scroll up to middle tab to reset
@@ -357,7 +344,6 @@ def topBarChangePRtoDNQ():
 '''
 DNQ Status Detail
 '''
-
 def dnqBadNumber():
     pyautogui.moveTo(769, 448) # Move to Status Detail
     pyautogui.leftClick()
@@ -444,4 +430,3 @@ def markComplete():
 
 if __name__ == "__main__":
     main()
-
